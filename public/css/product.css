@@ -1,0 +1,274 @@
+:root{
+    --white:#fff;
+    --black:#111;
+    --primary : #9D9091;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+*,
+* ::before,
+* ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins" sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color:var(--black);
+    background-color: var(--white);
+}
+a{
+    text-decoration: none;
+}
+.row{
+    height: calc(100vh - 7rem);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+.shoe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    position: relative;
+}
+.shoe-figure{
+    position: relative;
+    width: 37rem;
+    height: 37rem;
+    background-color: var(--black);
+    border-radius: 50%;
+    transition: 500ms linear;
+}
+.shoe-figure::before{
+     content: '';
+     position: absolute;
+     background-color: var(--white);
+     width: 85%;
+     height: 85%;
+     top: 7%;
+     left: 50%;
+     transform: translate(-50%,0);
+    border-radius: 50%;
+
+
+}
+.shoe-img{
+    position: absolute;
+    width: 45rem;
+    top: 1%;
+    left: -10%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(30deg);
+}
+
+.dots{
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+
+.dot{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: #111;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.dot:not(:last-child){
+    margin-right: .7rem;
+}
+.dot-color-1{
+    background-color: var(--black);
+}
+.dot-color-2{
+    background-color: var(--primary);
+}
+.dot.active{
+    border: 1px solid;
+    box-shadow: 0 0 2px rgba();
+}
+
+.info-subtitle{
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+.info-title{
+    font-weight: 600;
+    font-size: 4.4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+.info-description{
+    margin-bottom: 3rem;
+}
+.info-down{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+.size-title,
+.count-title{
+    margin-bottom: 1rem;
+}
+.size-total{
+    display: inline-block;
+    font-size: 1.3rem;
+    color: var(--black);
+    width: 5rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    border-radius: .5rem;
+}
+
+.size-total.active{
+    background:var(--black);
+    color: var(--white);
+}
+.size-total:not(:last-child){
+    margin-right: 1.5rem;
+
+}
+.count-content{
+    background-color: var(--black);
+    border-radius: .3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    width: 12rem;
+    height: 4rem;
+
+}
+.sub,
+.add{
+    padding-left:1rem;
+    background-color: var(--black);
+    border: none;
+    text-decoration: none;
+    color: var(--white);
+    outline: none;
+    border: none;
+}
+.sub:active{
+    outline: none;
+}
+#field1 input{
+    border: none;
+    background-color: var(--black);
+    outline: none;
+    color: var(--white);
+    align-items: center;
+    padding: .2rem;
+}
+.price-product-{
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    margin-top: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+
+}
+.price-product--title{
+    font-weight:600;
+    font-size: 1.8rem;
+
+}
+.price-product--button{
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: .5rem;
+    padding: 1.3rem 5rem;
+    text-decoration: none;
+
+}
+.price-product--button:hover{
+    text-decoration: none;
+}
+@media only screen and (max-width:840px){
+    .row{
+        grid-template-columns: 1fr;
+        margin-top: 8rem;
+        overflow: visible;
+    }
+}
+@media only screen and (max-width:567px){
+    .row{
+        margin-top: 4rem;
+    }
+    .shoe-figure{
+        width: 27rem;
+        height: 27rem;
+    }
+    .shoe-img{
+        width: 35rem;
+        top:25%;
+    }
+    .info-subtitle{
+        font-size: 1.8rem;
+
+    }
+    .info-title{
+        font-size: 3rem;
+        margin-bottom: .5rem;
+
+    }
+    .info-description{
+        line-height: 1.2;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+
+    }
+    .price-product-{
+
+        position: absolute;
+        left: 0;
+        margin-top: 4rem;
+        border-radius: 2rem 2rem 0 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        padding: 2rem 2rem;
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.other-img{
+    position: absolute;
+    width: 45rem;
+    top: -20%;
+    left: -10%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
